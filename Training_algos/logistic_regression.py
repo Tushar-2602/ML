@@ -15,7 +15,7 @@ class Logistic_Regression():
         self.X=X
         self.Y=Y
 
-        for i in range(self.no_of_iterations):
+        for i in range(self,self.no_of_iterations):
             self.update_weights()
         
 
@@ -33,10 +33,12 @@ class Logistic_Regression():
 
         
 
-    def predict(self):
-        Y_pred = 1/(1+np.exp(-(self.X.dot(self.w)+self.b)))
+    def predict(self,X):
+        Y_pred = 1/(1+np.exp(-(X.dot(self.w)+self.b)))
         Y_pred = np.where(Y_pred>0.5,1,0)
         return Y_pred
+    
+
 
 
         
